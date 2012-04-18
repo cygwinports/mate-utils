@@ -1,0 +1,22 @@
+In file included gdict-source-dialog.h:27:0,
+                 gdict-pref-dialog.c:39:
+libgdict/gdict.h:33:30: fatal error: gdict-enum-types.h: No such file or directory
+
+--- origsrc/mate-utils-1.2.0/mate-dictionary/src/Makefile.am	2012-03-12 06:25:56.000000000 -0500
++++ src/mate-utils-1.2.0/mate-dictionary/src/Makefile.am	2012-04-17 17:46:56.114752500 -0500
+@@ -37,6 +37,7 @@ mate_dictionary_SOURCES = \
+ 	$(NULL)
+ mate_dictionary_CFLAGS = \
+ 	-I$(top_builddir)/mate-dictionary \
++	-I$(top_builddir)/mate-dictionary/libgdict \
+ 	-I$(top_srcdir)/mate-dictionary \
+ 	$(MATE_UTILS_CFLAGS) \
+ 	$(NULL)
+@@ -68,6 +69,7 @@ mate_dictionary_applet_SOURCES = \
+ 	$(NULL)
+ mate_dictionary_applet_CFLAGS = \
+ 	-I$(top_builddir)/mate-dictionary \
++	-I$(top_builddir)/mate-dictionary/libgdict \
+ 	-I$(top_srcdir)/mate-dictionary \
+ 	$(MATE_UTILS_CFLAGS) \
+ 	$(APPLET_CFLAGS) \

@@ -1,0 +1,6 @@
+category: MATE
+requires: libglib2.0_0 libgtk2.0_0 libpango1.0_0
+external-source: mate-utils
+sdesc: "MATE dictionary library (runtime)"
+ldesc: "MATE is a fork of the GNOME 2 desktop. It provides an intuitive
+and attractive desktop to Linux users using traditional metaphors."

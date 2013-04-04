@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-utils"
-VERSION=1.4.0
+VERSION=1.6.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop utilities"
@@ -12,10 +12,10 @@ PATCH_URI="1.2.0-shave.patch
            1.2.0-vpath.patch"
 
 PKG_NAMES="${PN} libmatedict6 libmatedict-devel"
-mate_utils_CONTENTS="etc/ usr/bin/mate* usr/share/"
+mate_utils_CONTENTS="etc/ usr/bin/mate* usr/lib/mate-panel/ usr/share/"
 libmatedict6_SUMMARY="MATE dictionary library (runtime)"
 libmatedict6_CONTENTS="usr/bin/cygmatedict-6.dll"
 libmatedict_devel_SUMMARY="MATE dictionary library (development)"
 libmatedict_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 
-CYGCONF_ARGS="--disable-gdict-applet"
+CYGCONF_ARGS="--libexecdir=/usr/lib/mate-panel"

@@ -1,15 +1,16 @@
 inherit mate
 
 NAME="mate-utils"
-VERSION=1.8.1
-RELEASE=2
+VERSION=1.10.3
+RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop utilities"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
 
-PATCH_URI="1.2.0-shave.patch
-           1.2.0-vpath.patch"
+PATCH_URI="
+	1.2.0-vpath.patch
+"
 
 PKG_NAMES="${NAME} libmatedict6 libmatedict-devel"
 mate_utils_CONTENTS="etc/ usr/bin/mate* usr/libexec/ usr/share/"

@@ -12,9 +12,89 @@ PATCH_URI="
 	1.2.0-vpath.patch
 "
 
-PKG_NAMES="${NAME} libmatedict6 libmatedict-devel"
-mate_utils_CONTENTS="etc/ usr/bin/mate* usr/libexec/ usr/share/"
+PKG_NAMES="${NAME} ${NAME}-common mate-dictionary mate-disk-usage-analyzer
+	   mate-screenshot mate-search-tool mate-system-log
+	   libmatedict6 libmatedict-common libmatedict-devel libmatedict-doc"
+mate_utils_CATEGORY="_obsolete"
+mate_utils_CONTENTS= # empty
+mate_utils_REQUIRES="mate-dictionary mate-disk-usage-analyzer mate-screenshot mate-search-tool mate-system-log"
+mate_utils_common_CONTENTS="
+	usr/share/doc/mate-utils/
+	usr/share/locale/*/LC_MESSAGES/mate-utils.mo
+"
+mate_dictionary_SUMMARY="MATE dictionary"
+mate_dictionary_REQUIRES="${NAME}-common"
+mate_dictionary_CONTENTS="
+	usr/bin/mate-dictionary.exe
+	usr/libexec/mate-dictionary-applet.exe
+	usr/share/appdata/mate-dictionary.appdata.xml
+	usr/share/applications/mate-dictionary.desktop
+	usr/share/dbus-1/services/org.mate.panel.applet.DictionaryAppletFactory.service
+	usr/share/glib-2.0/schemas/org.mate.dictionary.gschema.xml
+	usr/share/help/*/mate-dictionary/
+	usr/share/man/man1/mate-dictionary.1*
+	usr/share/mate-dictionary/
+	usr/share/mate-panel/applets/org.mate.DictionaryApplet.mate-panel-applet
+"
+mate_disk_usage_analyzer_SUMMARY="MATE filesystem monitor"
+mate_disk_usage_analyzer_REQUIRES="${NAME}-common"
+mate_disk_usage_analyzer_CONTENTS="
+	etc/postinstall/mate-utils.sh
+	usr/bin/mate-disk-usage-analyzer.exe
+	usr/share/appdata/mate-disk-usage-analyzer.appdata.xml
+	usr/share/applications/mate-disk-usage-analyzer.desktop
+	usr/share/glib-2.0/schemas/org.mate.disk-usage-analyzer.gschema.xml
+	usr/share/help/*/mate-disk-usage-analyzer/
+	usr/share/icons/hicolor/*/apps/mate-disk-usage-analyzer*
+	usr/share/man/man1/mate-disk-usage-analyzer.1*
+	usr/share/mate-disk-usage-analyzer/
+"
+mate_screenshot_SUMMARY="MATE screenshot utility"
+mate_screenshot_REQUIRES="${NAME}-common"
+mate_screenshot_CONTENTS="
+	usr/bin/mate-panel-screenshot
+	usr/bin/mate-screenshot.exe
+	usr/share/appdata/mate-screenshot.appdata.xml
+	usr/share/applications/mate-screenshot.desktop
+	usr/share/glib-2.0/schemas/org.mate.screenshot.gschema.xml
+	usr/share/man/man1/mate-panel-screenshot.1*
+	usr/share/man/man1/mate-screenshot.1*
+	usr/share/mate-screenshot/
+"
+mate_search_tool_SUMMARY="MATE search tool"
+mate_search_tool_REQUIRES="${NAME}-common"
+mate_search_tool_CONTENTS="
+	usr/bin/mate-search-tool.exe
+	usr/share/appdata/mate-search-tool.appdata.xml
+	usr/share/applications/mate-search-tool.desktop
+	usr/share/glib-2.0/schemas/org.mate.search-tool.gschema.xml
+	usr/share/help/*/mate-search-tool/
+	usr/share/man/man1/mate-search-tool.1*
+	usr/share/pixmaps/mate-search-tool/
+"
+mate_system_log_SUMMARY="MATE system log viewer"
+mate_system_log_REQUIRES="${NAME}-common"
+mate_system_log_CONTENTS="
+	etc/postinstall/mate-utils.sh
+	usr/bin/mate-system-log.exe
+	usr/share/applications/mate-system-log.desktop
+	usr/share/glib-2.0/schemas/org.mate.system-log.gschema.xml
+	usr/share/help/*/mate-system-log/
+	usr/share/icons/hicolor/*/apps/mate-system-log*
+	usr/share/man/man1/mate-system-log.1*
+	usr/share/mate-utils/logview-*
+"
+libmatedict6_CATEGORY="Libs"
 libmatedict6_SUMMARY="MATE dictionary library (runtime)"
+libmatedict6_REQUIRES="libmatedict-common"
 libmatedict6_CONTENTS="usr/bin/cygmatedict-6.dll"
+libmatedict_common_CATEGORY="Libs"
+libmatedict_common_SUMMARY="MATE dictionary library (data)"
+libmatedict_common_CONTENTS="usr/share/mate-dict/"
+libmatedict_devel_CATEGORY="Libs"
 libmatedict_devel_SUMMARY="MATE dictionary library (development)"
 libmatedict_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+libmatedict_doc_CATEGORY="Doc"
+libmatedict_doc_SUMMARY="MATE dictionary library (API docs)"
+libmatedict_doc_CONTENTS="usr/share/gtk-doc/html/mate-dict/"
+

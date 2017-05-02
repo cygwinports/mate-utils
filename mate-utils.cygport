@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-utils"
-VERSION=1.16.0
+VERSION=1.18.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="MATE desktop utilities"
@@ -97,5 +97,3 @@ libmatedict_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 libmatedict_doc_CATEGORY="Doc"
 libmatedict_doc_SUMMARY="MATE dictionary library (API docs)"
 libmatedict_doc_CONTENTS="usr/share/gtk-doc/html/mate-dict/"
-
-CYGCONF_ARGS="--with-gtk=3.0"
